@@ -12,7 +12,8 @@ config :phoenix_heroku_pipeline, PhoenixHerokuPipelineWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "w3jlKT1Y0WAfkFfI2afE/r0mx9eguEwz3cEZuA4HzgA/QBLRZWrWGHUxYM8n9pe5",
   render_errors: [view: PhoenixHerokuPipelineWeb.ErrorView, accepts: ~w(json)],
-  pubsub: [name: PhoenixHerokuPipeline.PubSub, adapter: Phoenix.PubSub.PG2]
+  pubsub: [name: PhoenixHerokuPipeline.PubSub, adapter: Phoenix.PubSub.PG2],
+  from_config: System.get_env("FROM_CONFIG")
 
 # Configures Elixir's Logger
 config :logger, :console,
