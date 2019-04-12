@@ -7,5 +7,6 @@ defmodule PhoenixHerokuPipelineWeb.Router do
 
   scope "/api", PhoenixHerokuPipelineWeb do
     pipe_through :api
+    get "/vars", VarController, :index
   end
 end
